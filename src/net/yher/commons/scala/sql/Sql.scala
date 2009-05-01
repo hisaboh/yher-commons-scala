@@ -2,7 +2,7 @@ package net.yher.commons.scala.sql
 
 import java.sql._
 
-class Sql(val con : Connection) {
+class Sql(private val con : Connection) {
     def eachRow(sql:String)(block:ResultSet => Unit) {
         var ps : PreparedStatement = null
         var rs : ResultSet = null
